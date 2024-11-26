@@ -1,0 +1,92 @@
+Toggle message.js
+
+
+import React, { useState } from 'react';
+
+function ToggleMessage() {
+  // Corrected the variable name from `setlsVisible` to `setIsVisible`
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Corrected function name: `toggleVisibility`
+  const toggleVisibility = () => {
+    // Corrected the state setter function name from `setfsVisible` to `setIsVisible`
+    setIsVisible(!isVisible);
+  };
+
+  return (
+    <div className="toggle-message">
+      {/* Corrected the function name inside the onClick event */}
+      <button onClick={toggleVisibility}>
+        {isVisible ? 'Hide Message' : 'Show Message'}
+      </button>
+
+      {/* Corrected the conditional rendering */}
+      {isVisible && <p className="message">Hello, this is a toggled message!</p>}
+    </div>
+  );
+}
+
+export default ToggleMessage;
+
+
+
+
+
+
+APP.CSS
+
+
+
+.toggle-message {
+  border: 2px solid #FF5722;
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 10px;
+  background-color: #FFEBEE;
+  text-align: center;
+}
+
+.toggle-message button {
+  background-color: #FF5722;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-message button:hover {
+  background-color: #E64A19;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #D32F2F;
+}
+
+
+
+
+app.js
+
+
+
+
+import React from 'react';
+import './App.css';
+import ToggleMessage from './ToggleMessage';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>M. Kumarasamy College of Engineering</h1>
+      <h2>NAAC Accredited Autonomous Institution</h2>
+      <ToggleMessage />
+    </div>
+  );
+}
+
+export default App;
+
